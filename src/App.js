@@ -3,22 +3,27 @@ import "./App.css";
 import React, { Component } from "react";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "Jake",
+      company: "Microsoft",
+    };
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+          <p>Hii, {this.state.name}</p>
+          <p>I am working at {this.state.company}</p>
+          <button
+            onClick={() => {
+              this.setState({ name: "Jerry" });
+            }}
           >
-            Learn React
-          </a>
+            Change name
+          </button>
         </header>
       </div>
     );
